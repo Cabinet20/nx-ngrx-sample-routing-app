@@ -15,7 +15,7 @@ export class ProductEffects {
     this.actions$.pipe(
       navigation(ProductLayoutComponent, {
         run: a => {
-          debugger;
+          // debugger;
           console.log('Product params: ', a.params);
         }
       })
@@ -25,7 +25,7 @@ export class ProductEffects {
     this.actions$.pipe(
       navigation(HistoryComponent, {
         run: a => {
-          debugger;
+          // debugger;
           console.log('History params: ', a.params);
         }
       })

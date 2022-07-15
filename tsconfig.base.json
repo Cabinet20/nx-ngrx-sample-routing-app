@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@navigation/product": ["libs/navigation/feature-product/src/index.ts"],
+      "@navigation/router": ["libs/shared/router/src/index.ts"],
       "@navigation/shell": ["libs/navigation/shell/src/index.ts"]
     }
   },

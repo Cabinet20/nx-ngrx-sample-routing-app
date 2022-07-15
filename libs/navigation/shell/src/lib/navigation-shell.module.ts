@@ -12,8 +12,10 @@ import {
 } from '@ngrx/router-store';
 import * as fromShell from './+state/';
 import * as fromClient from './+state/client.reducer';
+import * as fromRouter from '@ngrx/router-store';
 import { ClientEffects } from './+state/client.effects';
 import { ClientFacade } from './+state/client.facade';
+import {SharedRouterModule} from "@navigation/router";
 
 export const navigationShellRoutes: Route[] = [
   {
@@ -37,10 +39,11 @@ export const navigationShellRoutes: Route[] = [
       fromClient.CLIENT_FEATURE_KEY,
       fromClient.clientReducer
     ),
-    // StoreModule.forFeature(
-    //   fromShell.NAVIGATION_SHELL_KEY,
-    //   fromShell.reducers
-    // ),
+    StoreModule.forFeature(
+      'my-router',
+      fromRouter.routerReducer
+    ),
+    // SharedRouterModule,
     EffectsModule.forFeature([ClientEffects]),
   ],
   declarations: [LayoutComponent],

@@ -36,13 +36,19 @@ export const getSelectedId = createSelector(
   getProductState,
   (state: ProductState) => state.selectedId
 );
+
 export const getProduct = createSelector(
-  selectUrl,
-  (params) => {
-    debugger;
-    return params;
-  }
-)
+  getProductState,
+  (state: ProductState) => state.selectedId
+);
+
+// export const getProduct = createSelector(
+//   selectUrl,
+//   (params) => {
+//     debugger;
+//     return params;
+//   }
+// )
 
 export const getSelected = createSelector(
   getProductEntities,

@@ -19,7 +19,7 @@ export class ClientEffects {
       switchMap(a => of(a.client).pipe(
         delay(2000),
         map(client => {
-          debugger;
+          // debugger;
           return ClientActions.loadClientSuccess({client: a.client})
         })
       ))
@@ -33,7 +33,7 @@ export class ClientEffects {
       navigation(LayoutComponent, {
         run: ((a: ActivatedRouteSnapshot) => {
             console.log(a.params);
-            debugger;
+            // debugger;
             return ClientActions.loadClient({ client: a.params['clientId']});
             // this.router.navigate([],{
             //   relativeTo: this.route

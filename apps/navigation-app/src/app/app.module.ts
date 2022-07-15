@@ -29,12 +29,14 @@ const routes: Route[] = [
       }),
     NavigationShellModule,
     StoreModule.forRoot(
-      {},
+      {
+        // 'my-router': routerReducer
+      },
       {
         metaReducers: !environment.production ? [] : [],
         runtimeChecks: {
           strictActionImmutability: true,
-          strictStateImmutability: true,
+          strictStateImmutability: false,
         },
       }
     ),
