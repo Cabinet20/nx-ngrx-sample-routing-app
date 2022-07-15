@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/navigation/feature-product/src",
+  "prefix": "navigation-demo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/navigation/feature-product"],
+      "options": {
+        "jestConfig": "libs/navigation/feature-product/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/navigation/feature-product/**/*.ts",
+          "libs/navigation/feature-product/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

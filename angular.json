@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "navigation-app": "apps/navigation-app",
-    "navigation-app-e2e": "apps/navigation-app-e2e"
+    "navigation-app-e2e": "apps/navigation-app-e2e",
+    "navigation-feature-product": "libs/navigation/feature-product",
+    "navigation-shell": "libs/navigation/shell"
   }
 }

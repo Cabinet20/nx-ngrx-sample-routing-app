@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@navigation/product": ["libs/navigation/feature-product/src/index.ts"],
+      "@navigation/shell": ["libs/navigation/shell/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

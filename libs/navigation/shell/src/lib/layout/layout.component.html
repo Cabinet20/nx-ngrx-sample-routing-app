@@ -1,0 +1,4 @@
+<p>Client layout</p>
+<p *ngIf="client$ | async as client">{{client}}</p>
+<p *ngIf="(loaded$ | async) == false">Loading ...</p>
+<router-outlet></router-outlet>
