@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/shared/router/src",
+  "prefix": "navigation-demo",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/shared/router"],
+      "options": {
+        "project": "libs/shared/router/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/router/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/router/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/router"],
+      "options": {
+        "jestConfig": "libs/shared/router/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/router/**/*.ts",
+          "libs/shared/router/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
