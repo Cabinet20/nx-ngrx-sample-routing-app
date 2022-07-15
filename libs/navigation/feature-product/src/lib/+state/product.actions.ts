@@ -12,3 +12,13 @@ export const loadProductFailure = createAction(
   '[Product/API] Load Product Failure',
   props<{ error: any }>()
 );
+
+
+export const updateProduct = createAction(
+  '[Product/update] Update product',
+  props<{ product: string}>()
+);
+
+export const updateProductSuccess = createAction(
+  '[Product/update] Update product success'
+);

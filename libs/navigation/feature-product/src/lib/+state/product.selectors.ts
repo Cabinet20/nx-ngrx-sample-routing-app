@@ -32,14 +32,9 @@ export const getProductEntities = createSelector(
   (state: ProductState) => selectEntities(state)
 );
 
-export const getSelectedId = createSelector(
-  getProductState,
-  (state: ProductState) => state.selectedId
-);
-
 export const getProduct = createSelector(
   getProductState,
-  (state: ProductState) => state.selectedId
+  (state: ProductState) => state.product
 );
 
 // export const getProduct = createSelector(
@@ -49,9 +44,3 @@ export const getProduct = createSelector(
 //     return params;
 //   }
 // )
-
-export const getSelected = createSelector(
-  getProductEntities,
-  getSelectedId,
-  (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
-);

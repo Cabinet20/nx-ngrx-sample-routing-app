@@ -12,4 +12,8 @@ export class ProductFacade {
 
   constructor(private store: Store) {
   }
+
+  updateProduct(productId: string) {
+    this.store.dispatch(ProductActions.updateProduct({ product: productId}));
+  }
 }

@@ -22,7 +22,7 @@ export class ClientGuard implements CanActivate {
       filter(loaded => loaded),
       tap(loaded => console.log('Post-filter client loaded = ', loaded)),
       map(loaded => {
-        debugger;
+        // debugger;
         return loaded
       }),
       first()

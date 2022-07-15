@@ -5,7 +5,6 @@
     "navigation-app": "apps/navigation-app",
     "navigation-app-e2e": "apps/navigation-app-e2e",
     "navigation-feature-product": "libs/navigation/feature-product",
-    "navigation-shell": "libs/navigation/shell",
-    "shared-router": "libs/shared/router"
+    "navigation-shell": "libs/navigation/shell"
   }
 }

@@ -13,6 +13,7 @@ export class ClientFacade {
    */
   loaded$ = this.store.pipe(select(ClientSelectors.getClientLoaded));
   client$ = this.store.pipe(select(ClientSelectors.getClient));
+  url$ = this.store.pipe(select(ClientSelectors.getUrl));
 
   constructor(private readonly store: Store) {}
 

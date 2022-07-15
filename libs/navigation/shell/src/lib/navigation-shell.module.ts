@@ -15,6 +15,8 @@ import * as fromClient from './+state/client.reducer';
 import * as fromRouter from '@ngrx/router-store';
 import { ClientEffects } from './+state/client.effects';
 import { ClientFacade } from './+state/client.facade';
+import {CustomSerializer} from "./serializer/custom.serializer";
+import {min} from "rxjs";
 
 export const navigationShellRoutes: Route[] = [
   {
@@ -32,7 +34,7 @@ export const navigationShellRoutes: Route[] = [
     CommonModule,
     RouterModule.forChild(navigationShellRoutes),
     StoreRouterConnectingModule.forRoot({
-      serializer: MinimalRouterStateSerializer,
+      serializer: CustomSerializer,
     }),
     StoreModule.forFeature(
       fromClient.CLIENT_FEATURE_KEY,

@@ -5,8 +5,7 @@ import {
 } from './client.reducer';
 import {getSelectors, RouterReducerState} from "@ngrx/router-store";
 
-
-export const routerFeatureKey = 'router';
+export const routerFeatureKey = 'my-router';
 export const selectRouter = createFeatureSelector<RouterReducerState>(routerFeatureKey);
 
 export const {
@@ -45,9 +44,17 @@ export const getClientError = createSelector(
 
 export const getClient = createSelector(
   getClientState,
-  selectRouteParams,
-  (state: ClientState, {clientId}) => {
-    debugger;
+  selectCurrentRoute,
+  (state: ClientState, params) => {
+    // debugger;
     return state.client
+  }
+);
+
+export const getUrl = createSelector(
+  selectUrl,
+  (url) => {
+    // debugger;
+    return url;
   }
 );

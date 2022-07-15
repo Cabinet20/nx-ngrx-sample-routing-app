@@ -7,7 +7,7 @@ import { ProductEntity } from './product.models';
 export const PRODUCT_FEATURE_KEY = 'product';
 
 export interface ProductState extends EntityState<ProductEntity> {
-  selectedId?: string | number; // which Product record has been selected
+  product?: string | number; // which Product record has been selected
   loaded: boolean; // has the Product list been loaded
   error?: string | null; // last known error (if any)
 }
@@ -39,6 +39,11 @@ const reducer = createReducer(
   on(ProductActions.loadProductFailure, (state, { error }) => ({
     ...state,
     error,
+  })),
+
+  on(ProductActions.updateProduct, (state, {product}) => ({
+    ...state,
+    product: product
   }))
 );
 

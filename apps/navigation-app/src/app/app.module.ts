@@ -30,7 +30,7 @@ const routes: Route[] = [
     NavigationShellModule,
     StoreModule.forRoot(
       {
-        // 'my-router': routerReducer
+        // router: routerReducer
       },
       {
         metaReducers: !environment.production ? [] : [],

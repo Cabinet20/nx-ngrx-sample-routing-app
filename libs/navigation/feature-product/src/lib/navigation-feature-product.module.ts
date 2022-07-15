@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterModule, Route} from '@angular/router';
+import {RouterModule, Route, RouterState} from '@angular/router';
 import {ProductLayoutComponent} from './product-layout/product-layout.component';
 import {HistoryComponent} from './history/history.component';
 import {DetailsComponent} from './details/details.component';
@@ -12,6 +12,7 @@ import {FullRouterStateSerializer, MinimalRouterStateSerializer, StoreRouterConn
 import {ClientGuard} from "../../../shell/src/lib/guards/client.guard";
 import {ProductFacade} from "./+state/product.facade";
 import {min} from "rxjs";
+import {CustomSerializer} from "../../../shell/src/lib/serializer/custom.serializer";
 
 export const navigationFeatureProductRoutes: Route[] = [
   {
@@ -50,7 +51,7 @@ export const navigationFeatureProductRoutes: Route[] = [
       fromProduct.productReducer
     ),
     StoreRouterConnectingModule.forRoot({
-      serializer: MinimalRouterStateSerializer
+      serializer: MinimalRouterStateSerializer,
     }),
     EffectsModule.forFeature([ProductEffects]),
   ],

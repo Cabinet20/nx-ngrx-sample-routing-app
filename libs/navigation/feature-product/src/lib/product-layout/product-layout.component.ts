@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ProductFacade} from "../+state/product.facade";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'navigation-demo-product-layout',
@@ -16,9 +17,10 @@ export class ProductLayoutComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   updateProduct() {
-
+    this.productFacade.updateProduct(`product-${(new Date()).getMilliseconds()}`);
   }
 }
