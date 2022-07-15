@@ -15,7 +15,6 @@ import * as fromClient from './+state/client.reducer';
 import * as fromRouter from '@ngrx/router-store';
 import { ClientEffects } from './+state/client.effects';
 import { ClientFacade } from './+state/client.facade';
-import {SharedRouterModule} from "@navigation/router";
 
 export const navigationShellRoutes: Route[] = [
   {
@@ -43,7 +42,6 @@ export const navigationShellRoutes: Route[] = [
       'my-router',
       fromRouter.routerReducer
     ),
-    // SharedRouterModule,
     EffectsModule.forFeature([ClientEffects]),
   ],
   declarations: [LayoutComponent],
