@@ -1,22 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
-import { LayoutComponent } from './layout/layout.component';
-import { ProductLayoutComponent } from '@navigation/product';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import {
-  FullRouterStateSerializer,
-  MinimalRouterStateSerializer, routerReducer,
-  StoreRouterConnectingModule,
-} from '@ngrx/router-store';
-import * as fromShell from './+state/';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Route} from '@angular/router';
+import {LayoutComponent} from './layout/layout.component';
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import * as fromClient from './+state/client.reducer';
 import * as fromRouter from '@ngrx/router-store';
-import { ClientEffects } from './+state/client.effects';
-import { ClientFacade } from './+state/client.facade';
+import {ClientEffects} from './+state/client.effects';
+import {ClientFacade} from './+state/client.facade';
 import {CustomSerializer} from "./serializer/custom.serializer";
-import {min} from "rxjs";
 
 export const navigationShellRoutes: Route[] = [
   {
@@ -50,4 +43,5 @@ export const navigationShellRoutes: Route[] = [
   exports: [LayoutComponent],
   providers: [ClientFacade],
 })
-export class NavigationShellModule {}
+export class NavigationShellModule {
+}

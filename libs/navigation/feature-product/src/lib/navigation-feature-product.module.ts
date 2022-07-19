@@ -8,20 +8,23 @@ import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import * as fromProduct from './+state/product.reducer';
 import {ProductEffects} from './+state/product.effects';
-import {FullRouterStateSerializer, MinimalRouterStateSerializer, StoreRouterConnectingModule} from "@ngrx/router-store";
+import {MinimalRouterStateSerializer, StoreRouterConnectingModule} from "@ngrx/router-store";
 import {ClientGuard} from "../../../shell/src/lib/guards/client.guard";
 import {ProductFacade} from "./+state/product.facade";
-import {min} from "rxjs";
 import {CustomSerializer} from "../../../shell/src/lib/serializer/custom.serializer";
 
 export const navigationFeatureProductRoutes: Route[] = [
   {
     path: '',
-    canActivate: [ClientGuard],
+    component: ProductLayoutComponent,
+  },
+  {
+    path: 'product',
     component: ProductLayoutComponent,
     children: [
       {
-        path: 'product/:productId',
+        path: ':productId',
+        canActivate: [ClientGuard],
         children: [
           {
             path: '',

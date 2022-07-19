@@ -25,7 +25,7 @@ const routes: Route[] = [
     BrowserModule,
     RouterModule.forRoot(routes,
       {
-        enableTracing: true
+        enableTracing: false
       }),
     NavigationShellModule,
     StoreModule.forRoot(

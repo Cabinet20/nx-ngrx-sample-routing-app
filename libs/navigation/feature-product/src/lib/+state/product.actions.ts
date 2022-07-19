@@ -16,7 +16,7 @@ export const loadProductFailure = createAction(
 
 export const updateProduct = createAction(
   '[Product/update] Update product',
-  props<{ product: string}>()
+  props<{ product: string }>()
 );
 
 export const updateProductSuccess = createAction(

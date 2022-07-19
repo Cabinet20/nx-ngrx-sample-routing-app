@@ -8,16 +8,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./product-layout.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class ProductLayoutComponent implements OnInit {
+export class ProductLayoutComponent {
 
   product$ = this.productFacade.product$;
 
   constructor(
     private productFacade: ProductFacade
   ) {
-  }
-
-  ngOnInit(): void {
   }
 
   updateProduct() {
